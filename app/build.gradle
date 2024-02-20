@@ -1,0 +1,56 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.kisonix.jgittest'
+    compileSdk 34
+    buildToolsVersion "34.0.0"
+    
+    defaultConfig {
+        applicationId "com.kisonix.jgittest"
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+        
+        vectorDrawables { 
+            useSupportLibrary true
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+    buildFeatures {
+        viewBinding true
+        buildConfig true
+    }
+    
+}
+
+dependencies {
+
+
+    implementation("androidx.appcompat:appcompat:1.6.1")
+    implementation("com.google.android.material:material:1.9.0")
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+    
+    implementation("io.reactivex.rxjava3:rxandroid:3.0.2")
+    implementation("io.reactivex.rxjava3:rxjava:3.1.5")
+    
+    implementation("com.blankj:utilcodex:1.31.1")
+    implementation("com.github.techinessoverloaded:progress-dialog:1.5.1")
+    
+    //newer version used some java api that are only available in api 33 and newer devices
+    implementation("org.eclipse.jgit:org.eclipse.jgit:5.13.3.202401111512-r")
+}
